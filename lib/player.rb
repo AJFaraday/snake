@@ -21,14 +21,21 @@ class Player < Worm
   end
 
   def update_position
+    start_x = @x_position
     @x_position += @x_speed
+    x_changed = start_x.to_i != @x_position.to_i
+
+    start_y = @y_position
     @y_position += @y_speed
+    y_changed = start_y.to_i != @y_position.to_i
+    
+    @position_changed = true if x_changed or y_changed
   end
 
   def set_random_position
     @x_position = rand(field.width)
     @y_position = rand(field.height)
-    @changed = true
+    @position_changed = true
   end
 
 end

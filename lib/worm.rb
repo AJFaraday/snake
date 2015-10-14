@@ -18,15 +18,17 @@ class Worm
   end
 
   def update
-    @position_changed = false
-    # drop a marker in your cell
-    field.set_cell(x_position, y_position, length) unless self.dead?
+    unless dead?
+      @position_changed = false
+      # drop a marker in your cell
+      field.set_cell(x_position, y_position, length)
 
-    update_position
+      update_position
 
-    # loop back if need be
-    @x_position %= field.width
-    @y_position %= field.height
+      # loop back if need be
+      @x_position %= field.width
+      @y_position %= field.height
+    end
   end
 
   def update_position
