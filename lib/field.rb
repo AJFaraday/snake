@@ -26,10 +26,18 @@ class Field
     end
   end
 
-  def update_random_cell
-    cells[rand(height)][rand(width)] = 3
+  def set_cell(x, y, length)
+    row = cells[y]
+    if row
+      row[x] = length
+    end
   end
 
+  def obstacle_at?(x, y)
+    cells[y][x] > 0
+  end
+
+  #--------------
 
   def draw
     system('clear')

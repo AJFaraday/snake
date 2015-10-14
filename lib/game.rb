@@ -7,6 +7,7 @@ class Game
     @frame_time = @config['frame_time'].to_f
     raise "Frame time must be more than zero" if @frame_time == 0
     @field = Field.new(self)
+    @player = Player.new(self)
     self.draw
   end
 
@@ -18,8 +19,8 @@ class Game
   end
 
   def tick
-    field.update_random_cell
     field.reduce_cells
+    player.update
     draw
   end
 
