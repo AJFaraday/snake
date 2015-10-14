@@ -11,7 +11,8 @@ class Worm
     @y_position = rand(@field.height)
     @x_speed = 0
     @y_speed = 0
-    @length = 5 #TODO
+    @speed = @game.config['worm_speed']
+    @length = @game.config['starting_worm_length']
     @dead = false
     class_initialize if self.respond_to?(:class_initialize)
   end
