@@ -29,6 +29,15 @@ class Worm
       # loop back if need be
       @x_position %= field.width
       @y_position %= field.height
+
+      update_score
+    end
+  end
+
+  def update_score
+    if field.target_at?(@x_position, @y_position)
+      @score += 1
+      @length += 1
     end
   end
 

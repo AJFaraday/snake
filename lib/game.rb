@@ -1,6 +1,6 @@
 class Game
 
-  attr_accessor :field, :config, :players
+  attr_accessor :field, :config, :players, :targets
 
   def initialize
     @config = YAML.load_file(File.dirname(__FILE__) + '/../config.yml')
@@ -8,9 +8,17 @@ class Game
     raise "Frame time must be more than zero" if @frame_time == 0
     @field = Field.new(self)
     initialize_worms
+    initialize_targets
     self.draw
   end
 
+  def initialize_targets
+    @targets = []
+    @config['targets'].times do
+      @targets << Target.new(self)
+    end
+  end
+  
   def initialize_worms
     @worms = []
     @config['worms'].each do |kls|
@@ -29,6 +37,9 @@ class Game
     field.reduce_cells
     @worms.each do |worm|
       worm.update
+    end
+    @targets.each do |target|
+      target.update
     end
     draw
   end

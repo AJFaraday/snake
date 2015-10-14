@@ -37,6 +37,10 @@ class Field
     cells[y][x] > 0
   end
 
+  def target_at?(x, y)
+    cells[y][x] < 0
+  end
+
   #--------------
 
   def draw
@@ -45,7 +49,14 @@ class Field
     @height.times do |row|
       result << '|'
       @width.times do |column|
-        result << (cells[row][column] > 0 ? '#' : ' ')
+        val = cells[row][column]
+        if val > 0
+          result << '#'
+        elsif val < 0
+          result << '.'
+        else
+          result << ' '
+        end
       end
       result << "|\n"
     end
