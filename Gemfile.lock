@@ -1,0 +1,15 @@
+GEM
+  remote: http://www.rubygems.org/
+  specs:
+    psych (2.0.8)
+    ruby_hid (0.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  psych
+  ruby_hid (= 0.0.0)
+
+BUNDLED WITH
+   1.10.5
