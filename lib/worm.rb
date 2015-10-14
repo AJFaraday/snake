@@ -1,4 +1,4 @@
-class Player
+class Worm
 
   attr_accessor :field, :x_position, :y_position
   attr_accessor :length, :speed, :x_speed, :y_speed
@@ -13,10 +13,11 @@ class Player
     @y_speed = 0
     @length = 5 #TODO
     @dead = false
-    class_initalize if respond_to?(:class_initialize)
+    class_initialize if self.respond_to?(:class_initialize)
   end
 
   def update
+    @position_changed = false
     # drop a marker in your cell
     field.set_cell(x_position, y_position, length) unless self.dead?
 
@@ -34,7 +35,7 @@ class Player
 
   def dead?
     return @dead if @dead
-    if field.obstacle_at?(x_position, y_position)
+    if @position_changed and field.obstacle_at?(x_position, y_position)
       @dead = true
     end
   end
