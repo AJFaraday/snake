@@ -32,8 +32,12 @@ class Worm
   end
 
   def update_position
-    @x_position += rand(3) - 1
-    @y_position += rand(3) - 1
+    raise "Base worm update_position called! Use a child class"
+  end
+
+  def set_position(x,y)
+    @x_position = x
+    @y_position = y
   end
 
   def dead?
