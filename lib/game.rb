@@ -1,5 +1,8 @@
 class Game
 
+  include GameComponents::Initialisers
+  include GameComponents::Endings
+
   attr_accessor :field, :config, :players, :targets
 
   def initialize
@@ -12,23 +15,14 @@ class Game
     self.draw
   end
 
-  def initialize_targets
-    @targets = []
-    @config['targets'].times do
-      @targets << Target.new(self)
-    end
-  end
-  
-  def initialize_worms
-    @worms = []
-    @config['worms'].each do |kls|
-      @worms << Kernel.const_get(kls).new(self)
-    end
-  end
-
   def run
     loop do
       tick
+      if @ended
+        system('clear')
+        puts @ending_text
+        break
+      end
       sleep @frame_time
     end
   end

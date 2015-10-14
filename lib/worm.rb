@@ -15,6 +15,7 @@ class Worm
     @length = @game.config['starting_worm_length']
     @dead = false
     @score = 0
+    @target_score = @game.config['target_score']
     class_initialize if self.respond_to?(:class_initialize)
   end
 
@@ -32,6 +33,19 @@ class Worm
 
       update_score
     end
+    game_ended?
+  end
+
+  def game_ended?
+    if self.is_a?(Player)
+      if self.dead?
+        @game.dead_ending
+      elsif @score >= @target_score
+        @game.win_ending
+      end
+    elsif @score >= @target_score
+      @game.lose_ending(self)
+    end
   end
 
   def update_score
@@ -45,7 +59,7 @@ class Worm
     raise "Base worm update_position called! Use a child class"
   end
 
-  def set_position(x,y)
+  def set_position(x, y)
     @x_position = x
     @y_position = y
   end
