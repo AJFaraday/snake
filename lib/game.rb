@@ -35,6 +35,9 @@ class Game
 
   def draw
     @field.draw
+    @worms.each do |worm|
+      worm.draw
+    end
   end
 
 end
