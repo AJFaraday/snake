@@ -5,11 +5,12 @@ class Game
 
   attr_accessor :field, :config, :players, :targets, :level, :worms
 
-  def initialize
+  def initialize(first_level = nil)
     @config = YAML.load_file(File.dirname(__FILE__) + '/../config.yml')
     @frame_time = @config['frame_time'].to_f
     raise "Frame time must be more than zero" if @frame_time <= 0
-    init_level(@config['first_level'])
+    first_level ||= @config['first_level']
+    init_level(first_level)
     self.draw
   end
 
