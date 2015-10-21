@@ -1,0 +1,28 @@
+---
+width: 50
+height: 20
+worm_speed: 2
+starting_worm_length: 5
+targets: 1
+target_score: 5
+worms:
+- class: Player
+  x: 25
+  y: 10
+- class: RandomWorm
+  x: 45
+  y: 15
+  length: 10
+- class: RandomWorm
+  x: 45
+  y: 5
+  length: 10
+- class: RandomWorm
+  x: 5
+  y: 5
+  length: 10
+- class: RandomWorm
+  x: 5
+  y: 15
+  length: 10
+available: true
