@@ -11,19 +11,11 @@ worms:
   y: 10
 - class: RandomWorm
   x: 45
-  y: 5
-  length: 10
-- class: RandomWorm
-  x: 5
-  y: 5
-  length: 10
-- class: RandomWorm
-  x: 45
   y: 15
   length: 10
 - class: RandomWorm
   x: 5
-  y: 15
+  y: 5
   length: 10
 available: true
-next: '03-random.yml'
+next: '04-many.yml'

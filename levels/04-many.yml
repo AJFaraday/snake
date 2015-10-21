@@ -2,12 +2,12 @@
 width: 50
 height: 20
 worm_speed: 2
-starting_worm_length: 5
-targets: 1
-target_score: 2
+starting_worm_length: 3
+targets: 40
+target_score: 50
 worms:
 - class: Player
-  x: 10
+  x: 25
   y: 10
-next: 01-train.yml
+next: 05-random.yml
 available: true
