@@ -4,19 +4,20 @@ class Worm
   attr_accessor :length, :speed, :x_speed, :y_speed
   attr_accessor :dead, :score
 
-  def initialize(game)
+  def initialize(game,config)
     @game = game
     @field = game.field
-    @x_position = rand(@field.width)
-    @y_position = rand(@field.height)
+    @config = config
+    @x_position = config['x'] || rand(@field.width)
+    @y_position = config['y'] || rand(@field.height)
     @x_speed = 0
     @y_speed = 0
-    @speed = @game.level['worm_speed']
-    @length = @game.level['starting_worm_length']
+    @speed = config['speed'] || @game.level['worm_speed']
+    @length = config['length'] || @game.level['starting_worm_length']
     @dead = false
     @score = 0
     @target_score = @game.level['target_score']
-    class_initialize if self.respond_to?(:class_initialize)
+    class_initialize(config) if self.respond_to?(:class_initialize)
   end
 
   def update

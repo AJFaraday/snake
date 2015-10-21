@@ -1,9 +1,9 @@
 class TrainWorm < Worm
 
-  def class_initialize
+  def class_initialize(config={})
     until @x_speed != 0 or @y_speed != 0
-      @x_speed = (rand(3) - 1)
-      @y_speed = (rand(3) - 1)
+      @x_speed = config['x_speed'] || (rand(3) - 1)
+      @y_speed = config['y_speed'] || (rand(3) - 1)
     end
   end
 

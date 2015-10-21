@@ -11,14 +11,14 @@ module GameComponents
 
     def initialize_worms
       @worms = []
-      @level['worms'].each do |kls|
-        @worms << Kernel.const_get(kls).new(self)
+      @level['worms'].each do |worm|
+        @worms << Kernel.const_get(worm['class']).new(self, worm)
       end
     end
 
     def init_level(filename)
       @level = Level.new(filename)
-      @level.unlock
+      #@level.unlock
       @field = Field.new(self)
       initialize_worms
       initialize_targets

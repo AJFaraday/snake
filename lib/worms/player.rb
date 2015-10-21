@@ -2,7 +2,7 @@ class Player < Worm
 
   attr_accessor :controller
 
-  def class_initialize
+  def class_initialize(config={})
     @controller = RubyHid::Device.new(RubyHid::Device.list[0])
     init_controller_observers
   end
