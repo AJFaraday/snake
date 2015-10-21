@@ -1,17 +1,2 @@
-width: 50
-height: 20
+first_level: '00-basic.yml'
 frame_time: 0.1
-# level specifics
-worm_speed: 2
-starting_worm_length: 3
-targets: 1
-target_score: 1
-worms:
-  - TrainWorm
-  - RandomWorm
-  - RandomWorm
-  - RandomWorm
-  - RandomWorm
-  - RandomWorm
-  - RandomWorm
-  - Player

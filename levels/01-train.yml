@@ -1,0 +1,9 @@
+width: 50
+height: 20
+worm_speed: 2
+starting_worm_length: 5
+targets: 1
+target_score: 5
+worms:
+  - Player
+  - TrainWorm

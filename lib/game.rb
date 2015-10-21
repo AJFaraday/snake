@@ -3,15 +3,13 @@ class Game
   include GameComponents::Initialisers
   include GameComponents::Endings
 
-  attr_accessor :field, :config, :players, :targets
+  attr_accessor :field, :config, :players, :targets, :level, :worms
 
   def initialize
     @config = YAML.load_file(File.dirname(__FILE__) + '/../config.yml')
     @frame_time = @config['frame_time'].to_f
-    raise "Frame time must be more than zero" if @frame_time == 0
-    @field = Field.new(self)
-    initialize_worms
-    initialize_targets
+    raise "Frame time must be more than zero" if @frame_time <= 0
+    init_level(@config['first_level'])
     self.draw
   end
 

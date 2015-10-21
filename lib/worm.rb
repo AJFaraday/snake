@@ -11,11 +11,11 @@ class Worm
     @y_position = rand(@field.height)
     @x_speed = 0
     @y_speed = 0
-    @speed = @game.config['worm_speed']
-    @length = @game.config['starting_worm_length']
+    @speed = @game.level['worm_speed']
+    @length = @game.level['starting_worm_length']
     @dead = false
     @score = 0
-    @target_score = @game.config['target_score']
+    @target_score = @game.level['target_score']
     class_initialize if self.respond_to?(:class_initialize)
   end
 

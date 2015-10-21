@@ -4,14 +4,14 @@ class Field
 
   def initialize(game)
     @game = game
-    @width = @game.config['width'].to_i
-    @height = @game.config['height'].to_i
+    @width = @game.level['width'].to_i
+    @height = @game.level['height'].to_i
     build_cells
   end
 
   def build_cells
     @cells = []
-    @height.times do |i|
+    @height.times do
       @cells << Array.new(@width, 0)
     end
   end
@@ -21,7 +21,9 @@ class Field
   def reduce_cells
     cells.each_with_index do |row, row_index|
       row.each_with_index do |cell, cell_index|
-        cells[row_index][cell_index] = cell - 1 if cell > 0
+        if cell > 0
+          cells[row_index][cell_index] = cell - 1
+        end
       end
     end
   end
