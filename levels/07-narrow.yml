@@ -1,0 +1,12 @@
+---
+width: 15
+height: 1
+worm_speed: 2
+starting_worm_length: 5
+targets: 1
+target_score: 10
+worms:
+- class: Player
+  x: 0
+  y: 0
+available: true
