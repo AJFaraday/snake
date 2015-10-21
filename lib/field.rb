@@ -50,10 +50,14 @@ class Field
       result << '|'
       @width.times do |column|
         val = cells[row][column]
-        if val > 0
+        if val >= 3
           result << '#'
-        elsif val < 0
+        elsif val == 2
+          result << '+'
+        elsif val == 1
           result << '.'
+        elsif val < 0
+          result << '*'
         else
           result << ' '
         end
