@@ -32,10 +32,4 @@ class Player < Worm
     @position_changed = true if x_changed or y_changed
   end
 
-  def set_random_position
-    @x_position = rand(field.width)
-    @y_position = rand(field.height)
-    @position_changed = true
-  end
-
 end

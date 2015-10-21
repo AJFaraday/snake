@@ -65,6 +65,12 @@ class Worm
     @y_position = y
   end
 
+  def set_random_position
+    @x_position = rand(field.width)
+    @y_position = rand(field.height)
+    @position_changed = true
+  end
+
   def dead?
     return @dead if @dead
     if @position_changed and field.obstacle_at?(x_position, y_position)
