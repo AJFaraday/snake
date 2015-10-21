@@ -13,22 +13,22 @@ worms:
   x: 5
   y: 8
   jump: 3
-  length: 10
+  length: 20
   x_speed: 1
   y_speed: 0
 - class: NeedleWorm
   x: 5
   y: 9
-  jump: 4
-  length: 10
+  jump: 5
+  length: 20
   x_speed: 1
   y_speed: 0
 - class: NeedleWorm
   x: 5
   y: 10
-  jump: 5
-  length: 10
+  jump: 7
+  length: 20
   x_speed: 1
   y_speed: 0
 available: true
-
+next: '10-warp.yml'

@@ -10,3 +10,4 @@ worms:
   x: 0
   y: 0
 available: true
+next: 08-needle.yml
