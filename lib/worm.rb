@@ -73,7 +73,7 @@ class Worm
   end
 
   def draw
-    puts "#{self.class.to_s.ljust(12)}: #{score} #{'DEAD!' if dead?}"
+    puts "#{self.class.to_s.ljust(12)}: #{score}/#{@target_score} #{'DEAD!' if dead?}"
   end
 
 end
