@@ -1,0 +1,22 @@
+---
+width: 50
+height: 20
+worm_speed: 2
+starting_worm_length: 5
+targets: 50
+target_score: 50
+worms:
+- class: Player
+  x: 5
+  y: 5
+- class: SeekingWorm
+  x: 45
+  y: 15
+- class: SeekingWorm
+  x: 5
+  y: 15
+- class: SeekingWorm
+  x: 45
+  y: 5
+available: true
+next: '14-all.yml'
