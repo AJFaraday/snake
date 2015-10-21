@@ -16,4 +16,4 @@ worms:
   x_speed: 0
   y_speed: 1
 available: true
-next: '11-narrow.yml'
+next: 11-narrow.yml

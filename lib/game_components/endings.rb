@@ -15,7 +15,7 @@ module GameComponents
           )
         )
       )
-      @ended = true
+      restart
     end
 
     def win_ending
@@ -59,7 +59,27 @@ module GameComponents
         )
       )
       @ending_text << "\n The winner was as #{winner.class}\n\n"
-      @ended = true
+      restart
+    end
+
+    def restart
+      @ending_count = 5
+      if @lives > 0
+        @lives -= 1
+        until @ending_count <= 0
+          system('clear')
+          puts @ending_text
+          puts "Restarting in: #{@ending_count}"
+          @ending_count -= 1
+          sleep 1
+        end
+        @ending_count = nil
+        @ending_text = nil
+        puts 'end'
+        init_level(@level.filename)
+      else
+        @ended = true
+      end
     end
 
   end

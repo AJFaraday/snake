@@ -1,11 +1,14 @@
 class Level
 
+  attr_accessor :filename
+
   def initialize(filename)
+    @filename = filename
     @filepath = File.join(
       File.dirname(__FILE__),
       '..',
       'levels',
-      filename
+      @filename
     )
     @config = YAML.load_file(@filepath)
   end

@@ -46,7 +46,6 @@ class Field
   #--------------
 
   def draw
-    system('clear')
     result = border
     @height.times do |row|
       result << '|'

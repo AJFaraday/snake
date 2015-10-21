@@ -1,2 +1,3 @@
 first_level: '00-basic.yml'
 frame_time: 0.1
+lives: 9

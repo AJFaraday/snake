@@ -28,4 +28,4 @@ worms:
   x_speed: 1
   y_speed: 0
 available: true
-next: '03-random.yml'
+next: 03-random.yml

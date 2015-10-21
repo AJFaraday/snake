@@ -16,4 +16,4 @@ worms:
   x_speed: 1
   y_speed: 0
 available: true
-next: '02-trains.yml'
+next: 02-trains.yml

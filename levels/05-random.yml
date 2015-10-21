@@ -26,4 +26,4 @@ worms:
   y: 15
   length: 10
 available: true
-next: '06-cross.yml'
+next: 06-cross.yml
