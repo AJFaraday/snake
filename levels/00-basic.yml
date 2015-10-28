@@ -6,7 +6,7 @@ starting_worm_length: 5
 targets: 1
 target_score: 2
 worms:
-- class: Player
+- class: PlayerWorm
   x: 10
   y: 10
 next: 01-train.yml

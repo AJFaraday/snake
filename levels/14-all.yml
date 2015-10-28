@@ -6,7 +6,7 @@ starting_worm_length: 5
 targets: 1
 target_score: 5
 worms:
-- class: Player
+- class: PlayerWorm
   x: 25
   y: 5
 - class: RandomWorm

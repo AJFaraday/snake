@@ -6,7 +6,7 @@ starting_worm_length: 3
 targets: 40
 target_score: 50
 worms:
-- class: Player
+- class: PlayerWorm
   x: 25
   y: 10
 next: 05-random.yml

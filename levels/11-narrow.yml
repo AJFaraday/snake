@@ -6,7 +6,7 @@ starting_worm_length: 5
 targets: 1
 target_score: 10
 worms:
-- class: Player
+- class: PlayerWorm
   x: 0
   y: 0
 next: 12-seeking.yml
