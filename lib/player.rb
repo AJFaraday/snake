@@ -37,6 +37,7 @@ class Player
       current_level[:times] ||= []
       current_level[:times] << level_time
       current_level[:times] = current_level[:times].sort[0..4]
+      ScoreBoard.add_time(@current_level, self.name, level_time)
     end
   end
 
