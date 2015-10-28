@@ -17,7 +17,7 @@ module GameComponents
     end
 
     def init_level(filename)
-      @level = Level.new(filename)
+      @level = Level.new(filename,self)
       @field = Field.new(self)
       initialize_worms
       initialize_targets

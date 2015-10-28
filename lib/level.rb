@@ -2,8 +2,9 @@ class Level
 
   attr_accessor :filename
 
-  def initialize(filename)
+  def initialize(filename, game)
     @filename = filename
+    @game = game
     @filepath = File.join(
       File.dirname(__FILE__),
       '..',
@@ -11,6 +12,8 @@ class Level
       @filename
     )
     @config = YAML.load_file(@filepath)
+    @game.player.end_level
+    @game.player.start_level(self)
   end
 
   def [](key)
