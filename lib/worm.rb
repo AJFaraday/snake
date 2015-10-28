@@ -38,7 +38,7 @@ class Worm
   end
 
   def game_ended?
-    if self.is_a?(Player)
+    if self.is_a?(PlayerWorm)
       if self.dead?
         @game.dead_ending
       elsif @score >= @target_score

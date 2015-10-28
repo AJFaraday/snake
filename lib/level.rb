@@ -21,16 +21,6 @@ class Level
     @config[key] = value
   end
 
-  def unlock
-    self['available'] = true
-    self.save
-  end
-
-  def lock
-    self['available'] = false
-    self.save
-  end
-
   def save
     File.open(@filepath, 'w') do |f|
       f.write @config.to_yaml

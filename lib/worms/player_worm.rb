@@ -1,4 +1,4 @@
-class Player < Worm
+class PlayerWorm < Worm
 
   attr_accessor :controller
 

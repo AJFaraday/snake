@@ -5,6 +5,7 @@ require_relative('./field.rb')
 require_relative('./worm.rb')
 require_relative('./target.rb')
 require_relative('./level.rb')
+require_relative('./player.rb')
 
 Dir.glob(File.dirname(__FILE__) + '/worms/*.rb').each{|x| require x }
 Dir.glob(File.dirname(__FILE__) + '/game_components/*.rb').each{|x| require x }

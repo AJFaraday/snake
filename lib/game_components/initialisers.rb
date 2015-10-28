@@ -18,10 +18,18 @@ module GameComponents
 
     def init_level(filename)
       @level = Level.new(filename)
-      @level.unlock
       @field = Field.new(self)
       initialize_worms
       initialize_targets
+    end
+
+    def get_player
+      name = ARGV[0]
+      unless name
+        puts "What is your name?"
+        name = gets.strip
+      end
+      self.player = Player.new(name)
     end
 
   end
