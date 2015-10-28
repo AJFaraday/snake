@@ -6,7 +6,8 @@ class Player
     @name = name
     file_path = File.join(
       File.dirname(__FILE__),
-      '..', 'players', "#{@name}.yml"
+      '..', 'working_data', 'players',
+      "#{@name}.yml"
     )
     if File.exists?(file_path)
       @data = YAML.load_file(file_path)
