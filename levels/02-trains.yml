@@ -27,5 +27,4 @@ worms:
   length: 10
   x_speed: 1
   y_speed: 0
-available: true
 next: 03-random.yml

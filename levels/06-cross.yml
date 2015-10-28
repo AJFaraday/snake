@@ -34,4 +34,4 @@ worms:
   x_speed: -1
   y_speed: -1
 next: 07-narrow.yml
-available: true
+

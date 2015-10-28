@@ -12,5 +12,4 @@ worms:
 - class: SeekingWorm
   x: 45
   y: 15
-available: true
 next: seeking_many.yml

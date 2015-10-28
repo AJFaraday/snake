@@ -10,4 +10,3 @@ worms:
   x: 10
   y: 10
 next: 01-train.yml
-available: true

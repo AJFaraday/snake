@@ -28,4 +28,3 @@ worms:
 - class: SeekingWorm
   x: 25
   y: 15
-available: true

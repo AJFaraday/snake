@@ -18,5 +18,4 @@ worms:
 - class: SeekingWorm
   x: 45
   y: 5
-available: true
 next: '14-all.yml'

@@ -17,5 +17,4 @@ worms:
   x: 5
   y: 5
   length: 10
-available: true
 next: 04-many.yml

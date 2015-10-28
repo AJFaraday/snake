@@ -30,5 +30,4 @@ worms:
   length: 20
   x_speed: 1
   y_speed: 0
-available: true
 next: 10-warp.yml

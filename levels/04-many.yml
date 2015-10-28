@@ -10,4 +10,3 @@ worms:
   x: 25
   y: 10
 next: 05-random.yml
-available: true
