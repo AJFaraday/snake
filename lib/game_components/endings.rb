@@ -19,6 +19,7 @@ module GameComponents
     end
 
     def win_ending
+      @player.end_level
       @worms = []
       @ending_count ||= 3
       @ending_text ||= File.read(

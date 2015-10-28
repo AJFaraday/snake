@@ -41,15 +41,28 @@ class Game
 
   def draw
     system('clear')
-    puts "#{level_name.ljust(@field.width/2)} #{lives_text.rjust(@field.width/2)}"
+    draw_header
     @field.draw
     @worms.each do |worm|
       worm.draw
     end
   end
 
+  def draw_header
+    header_parts = [
+      level_name.ljust(@field.width/3),
+      level_time.center(@field.width/3),
+      lives_text.rjust(@field.width/3)
+    ]
+    puts header_parts.join('')
+  end
+
   def level_name
     @level.filename
+  end
+
+  def level_time
+    @level.seconds_since_start.to_s
   end
 
   def lives_text

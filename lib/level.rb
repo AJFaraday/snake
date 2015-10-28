@@ -12,8 +12,8 @@ class Level
       @filename
     )
     @config = YAML.load_file(@filepath)
-    @game.player.end_level
     @game.player.start_level(self)
+    @start_time = Time.now
   end
 
   def [](key)
@@ -28,6 +28,10 @@ class Level
     File.open(@filepath, 'w') do |f|
       f.write @config.to_yaml
     end
+  end
+
+  def seconds_since_start
+    (Time.now - @start_time).to_i
   end
 
 end
