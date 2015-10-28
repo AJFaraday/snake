@@ -8,11 +8,11 @@ if ARGV[1]
       "#{ARGV[1]}*"
     )
   )
-  level = levels[1]
+  level = levels[0]
   if level
-    game = Game.new(levels[1].split('/')[-1])
+    game = Game.new(levels[0].split('/')[-1])
   else
-    raise "No Level found for #{ARGV[0]}"
+    raise "No Level found for #{ARGV[1]}"
   end
 else
   game = Game.new
