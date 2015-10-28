@@ -24,10 +24,8 @@ class Player
 
   def start_level(level)
     @current_level = level.filename.split('.')[0]
-    @data[:levels][@current_level] ||= {
-      available: true,
-      last_start: Time.now
-    }
+    @data[:levels][@current_level] ||= {}
+    @data[:levels][@current_level][:last_start] = Time.now
     save_data
   end
 

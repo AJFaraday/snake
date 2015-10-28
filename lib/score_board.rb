@@ -16,11 +16,13 @@ class ScoreBoard
       "#{level}.yml"
     )
     if File.exists?(file_path)
+      puts 'file found'
       @data = YAML.load_file(file_path)
-      @data_file = File.open(file_path, 'w')
+      @data_file = File.open(file_path, 'r')
     else
-      @data ||= []
+      puts 'file not found'
       @data_file = File.open(file_path, 'w+')
+      @data ||= []
     end
   end
 
