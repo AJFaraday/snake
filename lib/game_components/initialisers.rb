@@ -16,11 +16,37 @@ module GameComponents
       end
     end
 
-    def init_level(filename)
-      @level = Level.new(filename,self)
+    def init_level(filename = nil)
+      if filename
+        @filename = filename
+      else
+        get_first_level
+      end
+      @level = Level.new(@filename, self)
       @field = Field.new(self)
       initialize_worms
       initialize_targets
+    end
+
+    def get_first_level
+      if ARGV[1]
+        levels = Dir.glob(
+          File.join(
+            File.dirname(__FILE__),
+            '..','..',
+            'levels',
+            "#{ARGV[1]}*"
+          )
+        )
+        level = levels[0]
+        if level
+          @filename = Game.new(levels[0].split('/')[-1])
+        else
+          raise "No Level found for #{ARGV[1]}"
+        end
+      else
+        @filename = @config['first_level']
+      end
     end
 
     def get_player
