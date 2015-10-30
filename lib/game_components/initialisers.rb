@@ -40,7 +40,7 @@ module GameComponents
         )
         level = levels[0]
         if level
-          @filename = Game.new(levels[0].split('/')[-1])
+          @filename = levels[0].split('/')[-1]
         else
           raise "No Level found for #{ARGV[1]}"
         end
